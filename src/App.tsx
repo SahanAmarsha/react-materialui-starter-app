@@ -1,8 +1,8 @@
 import React from 'react';
 import {CssBaseline, ThemeProvider} from "@mui/material";
 import {createTheme} from '@mui/material/styles';
-import Home from "./pages/Home";
-import {BrowserRouter as Router} from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import {routes as appRoutes} from "./routes";
 import Layout from "./components/Layout";
 
 function App() {
@@ -30,7 +30,11 @@ function App() {
             <CssBaseline/>
             <Router>
                 <Layout>
-                    <Home/>
+                    <Routes>
+                        {appRoutes.map((route) => (
+                            <Route key={route.key} path={route.path} element={<route.component/>}/>
+                        ))}
+                    </Routes>
                 </Layout>
             </Router>
         </ThemeProvider>

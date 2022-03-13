@@ -1,5 +1,7 @@
 // pages
 import Home from "./pages/Home";
+import About from "./pages/About";
+import Products from "./pages/Products";
 
 // other
 import {FC} from "react";
@@ -15,10 +17,24 @@ interface Route {
 
 export const routes: Array<Route> = [
     {
+        key: 'about-route',
+        title: 'About',
+        path: '/about',
+        enabled: true,
+        component: About
+    },
+    {
+        key: 'products-route',
+        title: 'Products',
+        path: '/products',
+        enabled: true,
+        component: Products
+    },
+    {
         key: 'home-route',
         title: 'Home',
         path: '/',
         enabled: true,
         component: Home
-    }
+    },
 ]

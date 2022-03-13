@@ -84,16 +84,17 @@ const Navbar: FC = (): ReactElement => {
                                 flexDirection: 'row',
                                 justifyContent: 'flex-start',
                                 alignItems: 'center',
-                                marginLeft: '3rem'
+                                marginLeft: '1rem'
                             }}>
                             {routes.map((page) => (
                                 <Link
+                                    key={page.key}
                                     component={NavLink}
-                                    to='/'
+                                    to={page.path}
                                     color='black'
                                     underline='none'
                                     variant='button'
-                                    sx={{fontSize: 'large'}}
+                                    sx={{fontSize: 'large', marginLeft: '2rem'}}
                                 >{page.title}</Link>
                             ))}
                         </Box>
