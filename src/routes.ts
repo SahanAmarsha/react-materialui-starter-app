@@ -17,6 +17,13 @@ interface Route {
 
 export const routes: Array<Route> = [
     {
+        key: 'home-route',
+        title: 'Home',
+        path: '/',
+        enabled: true,
+        component: Home
+    },
+    {
         key: 'about-route',
         title: 'About',
         path: '/about',
@@ -29,12 +36,5 @@ export const routes: Array<Route> = [
         path: '/products',
         enabled: true,
         component: Products
-    },
-    {
-        key: 'home-route',
-        title: 'Home',
-        path: '/',
-        enabled: true,
-        component: Home
-    },
+    }
 ]
